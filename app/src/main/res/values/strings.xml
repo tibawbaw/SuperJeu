@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">SuperJeu</string>
-    <string name="lbConsigne">Veuillez entrer un nombre entre 1 et 100 :</string>
-    <string name="NbInferieur">Le nombre à trouver est inférieur à </string>
-    <string name="NotThat">Ce n\'est pas </string>
-    <string name="Nbsuperieur">Le nombre à trouver est supérieur à </string>
-    <string name="Bravo">Bravo ! Le nombre à trouver était bien </string>
-    <string name="strMessage">Félicitation, vous avez trouvé en %d coups?</string>
+    <string name="app_name">Super Jeu V1.0</string>
+    <string name="strRules">Veuillez entrer un nombre entre 1 et 100 :</string>
+    <string name="strLess">Le nombre à trouver est inférieur à %d</string>
+    <string name="strMore">Le nombre à trouver est supérieur à %d</string>
+    <string name="strMessage">Félicitation, vous avez trouvé en %d coups.\n\nVoulez-vous refaire une partie ?</string>
+    <string name="strHistory">Historique des coups joués :</string>
+    <string name="strYes">Oui</string>
+    <string name="strNo">Non</string>
 </resources>

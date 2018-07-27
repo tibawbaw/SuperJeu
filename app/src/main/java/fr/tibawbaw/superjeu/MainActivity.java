@@ -1,7 +1,6 @@
 package fr.tibawbaw.superjeu;
 
 import android.content.DialogInterface;
-import android.os.Debug;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,31 +54,37 @@ public class MainActivity extends AppCompatActivity {
         lbResult.setText("");
         score = 0;
         pbProgress.setProgress(score);
-        lbHistory.setText("");
+        lbHistory.setText(R.string.strHistory);
 
         txtNumber.requestFocus();
     }
 
     //On crée une fonction pour quand le résultat est trouvé
     private void numberFound(){
-        lbResult.setText(getString(R.string.Bravo) + searchedValue);
+        lbResult.setText("");
 
+        //On crée une pop-up pour demander au joueur s'il veut faire une nouvelle partie
         AlertDialog retryAlert = new AlertDialog.Builder(this).create();
+        //Titre de la pop-up
         retryAlert.setTitle(R.string.app_name);
+        //Message de la pop-up
         retryAlert.setMessage(getString(R.string.strMessage, score));
-        retryAlert.setButton(AlertDialog.BUTTON_POSITIVE, "Oui", new AlertDialog.OnClickListener(){
+        //Bouton "oui"
+        retryAlert.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.strYes), new AlertDialog.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 init();
             }
         });
-        retryAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Non", new AlertDialog.OnClickListener(){
+        //Bouton "Non"
+        retryAlert.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.strNo), new AlertDialog.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
             }
         });
 
+        //On affiche la pop-up
         retryAlert.show();
     }
 
@@ -90,23 +95,28 @@ public class MainActivity extends AppCompatActivity {
             // On vérifie s'il y a une valeur dans txtNumber
             if (txtNumber.getText().toString().isEmpty()) return;
 
-            // txtNumber contient bien une valeur
+            //txtNumber contient bien une valeur
             //On met à jour la barre de progression
             score = score + 1;
             pbProgress.setProgress(score);
 
+            //On récupère la valeur numérique
             int enteredValue = Integer.parseInt(txtNumber.getText().toString());
 
+            //On met à jour l'historique
+            lbHistory.setText(lbHistory.getText() + "\n" + enteredValue);
+
+            //La valeur est trouvée
             if (enteredValue == searchedValue) {
                 numberFound();
             }
-                else if (enteredValue > searchedValue) {
-                lbResult.setText(getString(R.string.NbInferieur) + enteredValue);
-                lbHistory.setText(lbHistory.getText() + getString(R.string.NotThat) + enteredValue + " !\n");
+            //La valeur saisie est supérieure
+            else if (enteredValue > searchedValue) {
+                lbResult.setText(getString(R.string.strLess, enteredValue));
             }
+            //La valeur saisie est inférieure
             else {
-                lbResult.setText(getString(R.string.Nbsuperieur) + enteredValue);
-                lbHistory.setText(lbHistory.getText() + getString(R.string.NotThat) + enteredValue + " !\n" );
+                lbResult.setText(getString(R.string.strMore, enteredValue));
             }
 
             //On réinitialise la zone de saisie
