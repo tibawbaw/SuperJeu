@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Super Jeu V1.0</string>
+    <string name="strRules">Veuillez entrer un nombre entre 1 et 100 :</string>
+    <string name="strLess">Le nombre à trouver est inférieur à %d</string>
+    <string name="strMore">Le nombre à trouver est supérieur à %d</string>
+    <string name="strMessage">Félicitation, vous avez trouvé en %d coups.  Voulez-vous refaire une partie ?</string>
+    <string name="strHistory">Historique des coups joués :</string>
+    <string name="strYes">Oui</string>
+    <string name="strNo">Non</string>
+    <string name="strButton">Comparer</string>
+    <string name="strAbout">À propos...</string>
+    <string name="strSettings">Réglages</string>
+</resources>

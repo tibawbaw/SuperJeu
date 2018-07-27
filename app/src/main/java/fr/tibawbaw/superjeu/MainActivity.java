@@ -5,11 +5,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.view.View.*;
 
@@ -44,6 +47,28 @@ public class MainActivity extends AppCompatActivity {
         btValid.setOnClickListener(btValidListener);
 
         init();
+    }
+
+    //On ajoute le menu de l'activité
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    //Actions à réaliser lorsqu'un item du menu est sélectionné
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_settings :
+                Toast.makeText(this,"Configuration de l'application", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.menu_about :
+                Toast.makeText(this,"Cette application est plutôt cool",Toast.LENGTH_LONG).show();
+                return true;
+            default :
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     //On créée une fonction d'initialisation pour le lancement d'un nouveau jeu

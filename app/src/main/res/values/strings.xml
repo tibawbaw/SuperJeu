@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Super Jeu V1.0</string>
-    <string name="strRules">Veuillez entrer un nombre entre 1 et 100 :</string>
-    <string name="strLess">Le nombre à trouver est inférieur à %d</string>
-    <string name="strMore">Le nombre à trouver est supérieur à %d</string>
-    <string name="strMessage">Félicitation, vous avez trouvé en %d coups.\n\nVoulez-vous refaire une partie ?</string>
-    <string name="strHistory">Historique des coups joués :</string>
-    <string name="strYes">Oui</string>
-    <string name="strNo">Non</string>
+    <string name="app_name">Super Game V1.0</string>
+    <string name="strRules">Enter a value between 1 and 100:</string>
+    <string name="strLess">The number to find is lower than %d</string>
+    <string name="strMore">The number to find is greater than %d</string>
+    <string name="strMessage">Congratulations! You find the number in %d times.  Do you want to play again?</string>
+    <string name="strYes">Yes</string>
+    <string name="strNo">No</string>
+    <string name="strButton">Compare</string>
+    <string name="strHistory">You\'ve already tried those numbers :</string>
+    <string name="strAbout">About</string>
+    <string name="strSettings">Settings</string>
 </resources>

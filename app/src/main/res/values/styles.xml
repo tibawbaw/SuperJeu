@@ -1,7 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat">
+        <!-- On attribue le style de bouton défini ci-dessous à tous les boutons du projet -->
+        <!--item name="android:buttonStyle">@style/DarkButtonTheme</item-->
+    </style>
+
+    <!-- Définition d'un style de bouton -->
+    <style name="DarkButtonTheme" parent="Base.Theme.AppCompat">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:background">#888</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
